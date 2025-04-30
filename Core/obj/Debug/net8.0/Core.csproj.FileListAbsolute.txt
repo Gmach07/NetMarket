@@ -9,3 +9,5 @@ C:\NETMarket\NetMarket\Core\obj\Debug\net8.0\Core.dll
 C:\NETMarket\NetMarket\Core\obj\Debug\net8.0\refint\Core.dll
 C:\NETMarket\NetMarket\Core\obj\Debug\net8.0\Core.pdb
 C:\NETMarket\NetMarket\Core\obj\Debug\net8.0\ref\Core.dll
+C:\NETMarket\NetMarket\Core\obj\Debug\net8.0\Core.sourcelink.json
+C:\NETMarket\NetMarket\Core\obj\Debug\net8.0\Core.csproj.AssemblyReference.cache

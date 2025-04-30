@@ -94,7 +94,7 @@
   {
     "ContainingType": "WebApi.Controllers.ProductoController",
     "Method": "GetProductos",
-    "RelativePath": "api/Producto",
+    "RelativePath": "api/productos",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -145,7 +145,7 @@
   {
     "ContainingType": "WebApi.Controllers.ProductoController",
     "Method": "GetProducto",
-    "RelativePath": "api/Producto/{id}",
+    "RelativePath": "api/productos/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -159,6 +159,52 @@
     "ReturnTypes": [
       {
         "Type": "WebApi.Dtos.ProductoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UsuarioController",
+    "Method": "GetUsuario",
+    "RelativePath": "api/Usuario",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "WebApi.Dtos.UsuarioDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UsuarioController",
+    "Method": "Login",
+    "RelativePath": "api/Usuario/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "WebApi.Dtos.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "WebApi.Dtos.UsuarioDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

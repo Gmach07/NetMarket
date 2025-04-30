@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\NETMarket\\NetMarket\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\dtos\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|c:\\netmarket\\netmarket\\businesslogic\\data\\seguridaddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\data\\seguridaddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\webapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
@@ -17,74 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\errors\\codeerrorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\errors\\codeerrorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\errors\\codeerrorexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\errors\\codeerrorexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\baseapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|c:\\netmarket\\netmarket\\businesslogic\\data\\config\\productoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\data\\config\\productoconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|c:\\netmarket\\netmarket\\businesslogic\\businesslogic\\obj\\.entityframeworkcore.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\businesslogic\\obj\\.entityframeworkcore.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|c:\\netmarket\\netmarket\\core\\specifications\\productoforcountingspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|solutionrelative:core\\specifications\\productoforcountingspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|c:\\netmarket\\netmarket\\core\\specifications\\productowithcategoriaandmarcaspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|solutionrelative:core\\specifications\\productowithcategoriaandmarcaspecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|c:\\netmarket\\netmarket\\core\\specifications\\basespecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|solutionrelative:core\\specifications\\basespecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|c:\\netmarket\\netmarket\\core\\specifications\\productospecificationsparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|solutionrelative:core\\specifications\\productospecificationsparams.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\dtos\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|c:\\netmarket\\netmarket\\businesslogic\\logic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\logic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|c:\\netmarket\\netmarket\\core\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|solutionrelative:core\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,24 +30,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "WebApi\\Dtos\\MappingProfile.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\MappingProfile.cs",
-              "RelativeToolTip": "WebApi\\Dtos\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:15:12.823Z",
+              "WhenOpened": "2025-04-24T19:56:12.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "WebApi\\Program.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Program.cs",
+              "RelativeToolTip": "WebApi\\Program.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAI4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-28T21:43:43.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SeguridadDbContext.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Data\\SeguridadDbContext.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Data\\SeguridadDbContext.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Data\\SeguridadDbContext.cs",
+              "RelativeToolTip": "BusinessLogic\\Data\\SeguridadDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T16:47:49.012Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "WebApi.http",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\WebApi.http",
+              "RelativeDocumentMoniker": "WebApi\\WebApi.http",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\WebApi.http",
+              "RelativeToolTip": "WebApi\\WebApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-03-20T20:05:55.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WebApi\\WeatherForecast.cs",
@@ -119,247 +92,7 @@
               "RelativeToolTip": "WebApi\\WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:12:04.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ExceptionMiddleware.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Middleware\\ExceptionMiddleware.cs",
-              "RelativeDocumentMoniker": "WebApi\\Middleware\\ExceptionMiddleware.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Middleware\\ExceptionMiddleware.cs",
-              "RelativeToolTip": "WebApi\\Middleware\\ExceptionMiddleware.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:11:36.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CodeErrorResponse.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Errors\\CodeErrorResponse.cs",
-              "RelativeDocumentMoniker": "WebApi\\Errors\\CodeErrorResponse.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Errors\\CodeErrorResponse.cs",
-              "RelativeToolTip": "WebApi\\Errors\\CodeErrorResponse.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:11:33.979Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CodeErrorException.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Errors\\CodeErrorException.cs",
-              "RelativeDocumentMoniker": "WebApi\\Errors\\CodeErrorException.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Errors\\CodeErrorException.cs",
-              "RelativeToolTip": "WebApi\\Errors\\CodeErrorException.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:11:29.94Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WebApi.http",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\WebApi.http",
-              "RelativeDocumentMoniker": "WebApi\\WebApi.http",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\WebApi.http",
-              "RelativeToolTip": "WebApi\\WebApi.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-03-20T20:05:55.152Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "WebApi\\Program.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Program.cs",
-              "RelativeToolTip": "WebApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T21:43:43.677Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ErrorController.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\ErrorController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\ErrorController.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\ErrorController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\ErrorController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAlwAwAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:10:37.361Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CategoriaController.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\CategoriaController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\CategoriaController.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\CategoriaController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\CategoriaController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:10:30.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BaseApiController.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\BaseApiController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\BaseApiController.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\BaseApiController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\BaseApiController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:10:26.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ProductoConfiguration.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Data\\Config\\ProductoConfiguration.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Data\\Config\\ProductoConfiguration.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Data\\Config\\ProductoConfiguration.cs",
-              "RelativeToolTip": "BusinessLogic\\Data\\Config\\ProductoConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-20T20:09:49.097Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": ".EntityFrameworkCore.targets",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\BusinessLogic\\obj\\.EntityFrameworkCore.targets",
-              "RelativeDocumentMoniker": "BusinessLogic\\BusinessLogic\\obj\\.EntityFrameworkCore.targets",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\BusinessLogic\\BusinessLogic\\obj\\.EntityFrameworkCore.targets",
-              "RelativeToolTip": "BusinessLogic\\BusinessLogic\\obj\\.EntityFrameworkCore.targets",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-03-20T20:09:39.121Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "WebApi\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "WebApi\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-20T20:00:11.384Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ProductoSpecificationsParams.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\ProductoSpecificationsParams.cs",
-              "RelativeDocumentMoniker": "Core\\Specifications\\ProductoSpecificationsParams.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\ProductoSpecificationsParams.cs",
-              "RelativeToolTip": "Core\\Specifications\\ProductoSpecificationsParams.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBoAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T21:38:32.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProductoForCountingSpecification.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\ProductoForCountingSpecification.cs",
-              "RelativeDocumentMoniker": "Core\\Specifications\\ProductoForCountingSpecification.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\ProductoForCountingSpecification.cs",
-              "RelativeToolTip": "Core\\Specifications\\ProductoForCountingSpecification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T17:43:52.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Pagination.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\Pagination.cs",
-              "RelativeDocumentMoniker": "WebApi\\Dtos\\Pagination.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\Pagination.cs",
-              "RelativeToolTip": "WebApi\\Dtos\\Pagination.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T17:37:19.495Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Logic\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "BusinessLogic\\Logic\\GenericRepository.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Logic\\GenericRepository.cs",
-              "RelativeToolTip": "BusinessLogic\\Logic\\GenericRepository.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAADEAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T17:34:35.037Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Interfaces\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "Core\\Interfaces\\IGenericRepository.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\Core\\Interfaces\\IGenericRepository.cs",
-              "RelativeToolTip": "Core\\Interfaces\\IGenericRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T17:33:23.697Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProductoWithCategoriaAndMarcaSpecification.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\ProductoWithCategoriaAndMarcaSpecification.cs",
-              "RelativeDocumentMoniker": "Core\\Specifications\\ProductoWithCategoriaAndMarcaSpecification.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\ProductoWithCategoriaAndMarcaSpecification.cs",
-              "RelativeToolTip": "Core\\Specifications\\ProductoWithCategoriaAndMarcaSpecification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-28T21:39:42.413Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "BaseSpecification.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\BaseSpecification.cs",
-              "RelativeDocumentMoniker": "Core\\Specifications\\BaseSpecification.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\Core\\Specifications\\BaseSpecification.cs",
-              "RelativeToolTip": "Core\\Specifications\\BaseSpecification.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAiwDIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T20:28:21.747Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAowBcAAABkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T20:10:18.812Z"
+              "WhenOpened": "2025-03-20T20:12:04.119Z"
             }
           ]
         }

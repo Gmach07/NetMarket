@@ -11,6 +11,26 @@
       "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\dtos\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|c:\\netmarket\\netmarket\\businesslogic\\logic\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\logic\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\extensions\\usermanagerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\extensions\\usermanagerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\dtos\\direcciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\direcciondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|c:\\netmarket\\netmarket\\businesslogic\\data\\seguridaddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\data\\seguridaddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -40,10 +60,69 @@
               "RelativeDocumentMoniker": "WebApi\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "WebApi\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkAAAAAAAAAAAAuwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T19:56:12.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-02T06:12:37.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "WebApi\\Dtos\\MappingProfile.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\MappingProfile.cs",
+              "RelativeToolTip": "WebApi\\Dtos\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T20:31:59.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserManagerExtensions.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Extensions\\UserManagerExtensions.cs",
+              "RelativeDocumentMoniker": "WebApi\\Extensions\\UserManagerExtensions.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Extensions\\UserManagerExtensions.cs",
+              "RelativeToolTip": "WebApi\\Extensions\\UserManagerExtensions.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T20:22:17.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DireccionDto.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\DireccionDto.cs",
+              "RelativeDocumentMoniker": "WebApi\\Dtos\\DireccionDto.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\DireccionDto.cs",
+              "RelativeToolTip": "WebApi\\Dtos\\DireccionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T20:17:57.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApi\\appsettings.json",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\appsettings.json",
+              "RelativeToolTip": "WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-30T07:18:44.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Logic\\TokenService.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Logic\\TokenService.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Logic\\TokenService.cs",
+              "RelativeToolTip": "BusinessLogic\\Logic\\TokenService.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAABcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T06:32:04.53Z"
             },
             {
               "$type": "Document",
@@ -53,14 +132,14 @@
               "RelativeDocumentMoniker": "WebApi\\Program.cs",
               "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Program.cs",
               "RelativeToolTip": "WebApi\\Program.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAAAI4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAADcAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-28T21:43:43.677Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "SeguridadDbContext.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Data\\SeguridadDbContext.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Data\\SeguridadDbContext.cs",
@@ -72,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "WebApi.http",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\WebApi.http",
               "RelativeDocumentMoniker": "WebApi\\WebApi.http",
@@ -84,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WebApi\\WeatherForecast.cs",

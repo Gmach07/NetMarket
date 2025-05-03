@@ -18,22 +18,20 @@ namespace BusinessLogic.Logic
 
         private readonly IConfiguration _config;
 
-        public TokenService( IConfiguration config)
+        public TokenService(IConfiguration config)
         {
             _config = config;
-            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Token:Key"]));
-          
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Token:Key"]));
         }
 
-      
         public string CreateToken(Usuario usuario)
         {
             var claims = new List<Claim>
             {
-                
                 new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
                 new Claim(JwtRegisteredClaimNames.Name, usuario.Nombre),
                 new Claim(JwtRegisteredClaimNames.FamilyName, usuario.Apellido),
+                new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
                 new Claim("username", usuario.UserName),
             };
 
@@ -42,12 +40,9 @@ namespace BusinessLogic.Logic
             var tokenConfiguration = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(7),
+                Expires = DateTime.Now.AddDays(60),
                 SigningCredentials = credencials,
-                Issuer = _config["Token:Issuer"],
-                Audience = _config["Token:Audience"]
-                /*ValidateIssuer = false,
-                ValidateAudience = true*/
+                Issuer = _config["Token:Issuer"]
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
@@ -55,7 +50,5 @@ namespace BusinessLogic.Logic
 
             return tokenHandler.WriteToken(token);
         }
-
-        
     }
 }

@@ -1,5 +1,83 @@
 [
   {
+    "ContainingType": "WebApi.Controllers.CarritoCompraController",
+    "Method": "UpdateCarritoCompra",
+    "RelativePath": "api/CarritoCompra",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carrito",
+        "Type": "Core.Entities.CarritoCompra",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Core.Entities.CarritoCompra",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.CarritoCompraController",
+    "Method": "GetCarritoById",
+    "RelativePath": "api/CarritoCompra/{carritoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Core.Entities.CarritoCompra",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.CarritoCompraController",
+    "Method": "DeleteCarrito",
+    "RelativePath": "api/CarritoCompra/{carritoId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Boolean",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "WebApi.Controllers.CategoriaController",
     "Method": "GetCategoriaAll",
     "RelativePath": "api/Categoria",

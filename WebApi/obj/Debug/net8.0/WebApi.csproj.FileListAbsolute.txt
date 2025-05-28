@@ -159,3 +159,5 @@ C:\NETMarket\NetMarket\WebApi\bin\Debug\net8.0\System.Security.Cryptography.Xml.
 C:\NETMarket\NetMarket\WebApi\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\NETMarket\NetMarket\WebApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\NETMarket\NetMarket\WebApi\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\NETMarket\NetMarket\WebApi\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+C:\NETMarket\NetMarket\WebApi\bin\Debug\net8.0\StackExchange.Redis.dll

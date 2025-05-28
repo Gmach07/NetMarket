@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using StackExchange.Redis;
 using System.Text;
 using WebApi.Dtos;
 using WebApi.Middleware;
@@ -21,6 +22,12 @@ builder.Services.AddDbContext<MarketDbContext>(opt =>
 
 builder.Services.AddDbContext<SeguridadDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("IdentitySeguridad")));
+
+//Conexion del redis 
+builder.Services.AddSingleton<IConnectionMultiplexer>(c => {
+    var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true);
+    return ConnectionMultiplexer.Connect(configuration);
+});
 
 // Configuración de Identity
 builder.Services.AddIdentityCore<Usuario>(options =>
@@ -44,6 +51,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = false
         };
     });
+
+//Carrito compra 
+builder.Services.AddScoped<ICarritoCompraRepository, CarritoCompraRepository>();
 
 // Configuración de CORS
 builder.Services.AddCors(opt =>

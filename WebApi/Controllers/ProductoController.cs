@@ -9,7 +9,7 @@ using WebApi.Errors;
 
 namespace WebApi.Controllers
 {
-    [Route("api/productos")]        
+    [Route("api/productos")]
     [ApiController]
     public class ProductoController : BaseApiController
     {
@@ -18,21 +18,21 @@ namespace WebApi.Controllers
         public ProductoController(IGenericRepository<Producto> productoRepository, IMapper mapper) {
 
             _productoRepository = productoRepository;
-            _mapper = mapper;   
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<ActionResult<Pagination<ProductoDto>>> GetProductos([FromQuery]ProductoSpecificationsParams productoParams)
+        public async Task<ActionResult<Pagination<ProductoDto>>> GetProductos([FromQuery] ProductoSpecificationsParams productoParams)
         {
             var spec = new ProductoWithCategoriaAndMarcaSpecification(productoParams);
 
 
-            var productos =  await _productoRepository.GetAllWithSpec(spec);
+            var productos = await _productoRepository.GetAllWithSpec(spec);
 
             var specCount = new ProductoForCountingSpecification(productoParams);
             var totalProductos = await _productoRepository.CountAsync(specCount);
 
-            var rounded = Math.Ceiling( Convert.ToDecimal(totalProductos / productoParams.PageSize));
+            var rounded = Math.Ceiling(Convert.ToDecimal(totalProductos / productoParams.PageSize));
             var totalPage = Convert.ToInt32(rounded);
 
             var data = _mapper.Map<IReadOnlyList<Producto>, IReadOnlyList<ProductoDto>>(productos);
@@ -57,18 +57,41 @@ namespace WebApi.Controllers
             //spec: debe incluir la logica de la condicion de la consulta y tambien las relaciones entre las entidades
             // la relacion entre Producto y Marca, Categoria 
             var spec = new ProductoWithCategoriaAndMarcaSpecification(id);
-            var producto =  await _productoRepository.GetByIdWithSpec(spec);
+            var producto = await _productoRepository.GetByIdWithSpec(spec);
 
-            if(producto == null)
+            if (producto == null)
             {
                 return NotFound(new CodeErrorResponse(404, "El servidor no puede encontrar la peticion"));
             }
 
             return _mapper.Map<Producto, ProductoDto>(producto);
-            
+
         }
 
+        [HttpPost]
+        public async Task<ActionResult<Producto>> Post(Producto producto)
+        {
+            var resultado = await _productoRepository.Add(producto);
+            if (resultado == 0)
+            {
+                throw new Exception("No se inserto el producto");
+            }
+            return Ok(resultado);
+        }
 
+        [HttpPut("{id}")]
 
+        public async Task<ActionResult<Producto>> Put(int id, Producto producto)
+        {   
+            producto.Id = id;
+            var resultado =  await _productoRepository.Update(producto);
+
+            if(resultado == 0)
+            {
+                throw new Exception("No se pudo actualizar el producto");
+
+            }
+            return Ok(resultado);
+        }
     }
 }

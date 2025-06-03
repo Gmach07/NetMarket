@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\NETMarket\\NetMarket\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|c:\\netmarket\\netmarket\\businesslogic\\logic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\logic\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|c:\\netmarket\\netmarket\\core\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F0D24D5-4FB8-4EA9-A3EC-A8A279FAD762}|Core\\Core.csproj|solutionrelative:core\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\carritocompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\carritocompracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -43,10 +59,6 @@
       "RelativeMoniker": "D:0:0:{E73A1B5B-E0EE-4C34-B891-D709BA36BCC4}|BusinessLogic\\BusinessLogic.csproj|solutionrelative:businesslogic\\cargardata\\marca.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|c:\\netmarket\\netmarket\\webapi\\dtos\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{115169B7-81A2-455F-89C8-1CBC00FBE7FA}|WebApi\\WebApi.csproj|solutionrelative:webapi\\dtos\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -78,24 +90,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T18:17:18.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Interfaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "Core\\Interfaces\\IGenericRepository.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\Core\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "Core\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T17:28:13.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CarritoCompraController.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\CarritoCompraController.cs",
               "RelativeDocumentMoniker": "WebApi\\Controllers\\CarritoCompraController.cs",
               "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\CarritoCompraController.cs",
               "RelativeToolTip": "WebApi\\Controllers\\CarritoCompraController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAuwC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-20T18:47:52.98Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-20T18:47:52.98Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CarritoCompraRepository.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Data\\CarritoCompraRepository.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Data\\CarritoCompraRepository.cs",
@@ -107,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "CarritoItem.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Entities\\CarritoItem.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\CarritoItem.cs",
@@ -119,7 +155,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-02T06:12:37.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Logic\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "BusinessLogic\\Logic\\GenericRepository.cs",
+              "ToolTip": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Logic\\GenericRepository.cs",
+              "RelativeToolTip": "BusinessLogic\\Logic\\GenericRepository.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAgwD0AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T17:29:58.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "CarritoCompra.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Entities\\CarritoCompra.cs",
               "RelativeDocumentMoniker": "Core\\Entities\\CarritoCompra.cs",
@@ -131,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Program.cs",
               "RelativeDocumentMoniker": "WebApi\\Program.cs",
@@ -143,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "marca.json",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\CargarData\\marca.json",
               "RelativeDocumentMoniker": "BusinessLogic\\CargarData\\marca.json",
@@ -155,19 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\NETMarket\\NetMarket\\WebApi\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-02T06:12:37.671Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "UserManagerExtensions.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Extensions\\UserManagerExtensions.cs",
               "RelativeDocumentMoniker": "WebApi\\Extensions\\UserManagerExtensions.cs",
@@ -179,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\appsettings.json",
               "RelativeDocumentMoniker": "WebApi\\appsettings.json",
@@ -191,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "ICarritoCompraRepository.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\Core\\Interfaces\\ICarritoCompraRepository.cs",
               "RelativeDocumentMoniker": "Core\\Interfaces\\ICarritoCompraRepository.cs",
@@ -203,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "DireccionDto.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\DireccionDto.cs",
               "RelativeDocumentMoniker": "WebApi\\Dtos\\DireccionDto.cs",
@@ -215,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "SeguridadDbContext.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Data\\SeguridadDbContext.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Data\\SeguridadDbContext.cs",
@@ -227,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "SeguridadDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Identity\\Migrations\\SeguridadDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Identity\\Migrations\\SeguridadDbContextModelSnapshot.cs",
@@ -239,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\BusinessLogic\\Logic\\TokenService.cs",
               "RelativeDocumentMoniker": "BusinessLogic\\Logic\\TokenService.cs",
@@ -251,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\Dtos\\MappingProfile.cs",
               "RelativeDocumentMoniker": "WebApi\\Dtos\\MappingProfile.cs",
@@ -263,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "WebApi.http",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\WebApi.http",
               "RelativeDocumentMoniker": "WebApi\\WebApi.http",
@@ -275,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\NETMarket\\NetMarket\\WebApi\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "WebApi\\WeatherForecast.cs",

@@ -13,107 +13,136 @@ using WebApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configuración de servicios
-builder.Services.AddControllers();
-
-// Configuración de DbContexts
+// 1) Add DbContexts
 builder.Services.AddDbContext<MarketDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 builder.Services.AddDbContext<SeguridadDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("IdentitySeguridad")));
 
-//Conexion del redis 
-builder.Services.AddSingleton<IConnectionMultiplexer>(c => {
-    var configuration = ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true);
-    return ConnectionMultiplexer.Connect(configuration);
+// 2) Redis
+builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
+    ConnectionMultiplexer.Connect(
+        ConfigurationOptions.Parse(builder.Configuration.GetConnectionString("Redis"), true)));
+
+// 3) Identity con Roles
+builder.Services
+    .AddIdentity<Usuario, IdentityRole>(options =>
+    {
+        // Password, bloqueo, etc.
+        options.Password.RequireDigit = true;
+        options.Password.RequireUppercase = false;
+        options.Password.RequiredLength = 6;
+    })
+    .AddEntityFrameworkStores<SeguridadDbContext>()
+    .AddDefaultTokenProviders();
+
+// 3.1) Deshabilitar redirecciones de login para APIs
+builder.Services.ConfigureApplicationCookie(opt =>
+{
+    opt.Events.OnRedirectToLogin = context =>
+    {
+        context.Response.StatusCode = 401;
+        return Task.CompletedTask;
+    };
+    opt.Events.OnRedirectToAccessDenied = context =>
+    {
+        context.Response.StatusCode = 403;
+        return Task.CompletedTask;
+    };
 });
 
-// Configuración de Identity
-builder.Services.AddIdentityCore<Usuario>(options =>
-{
-    // Configuración de opciones de contraseña si es necesario
-})
-.AddEntityFrameworkStores<SeguridadDbContext>()
-.AddSignInManager<SignInManager<Usuario>>();
-
-// Configuración de autenticación JWT
+// 4) JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
+    .AddJwtBearer(opt =>
     {
-        options.TokenValidationParameters = new TokenValidationParameters
+        opt.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(
                 Encoding.UTF8.GetBytes(builder.Configuration["Token:Key"])),
             ValidIssuer = builder.Configuration["Token:Issuer"],
             ValidateIssuer = true,
-            ValidateAudience = false
+            ValidAudience = builder.Configuration["Token:Audience"], // <-- ¡AÑADIDO!
+            ValidateAudience = true, // <-- ¡CAMBIADO A TRUE!
+            ValidateLifetime = true // <-- ¡CONFIRMADO EN TRUE!
         };
     });
 
-//Carrito compra 
-builder.Services.AddScoped<ICarritoCompraRepository, CarritoCompraRepository>();
 
-// Configuración de CORS
-builder.Services.AddCors(opt =>
-{
-    opt.AddPolicy("CorsRule", rule =>
-    {
-        rule.AllowAnyHeader()
-             .AllowAnyMethod()
-             .WithOrigins("http://localhost:5173") // Sin la barra final
-             .AllowCredentials(); // Permite enviar cookies/token
-    });
-});
-
-// Configuración de AutoMapper
+// 5) Otros servicios (CORS, AutoMapper, Repositorios…)
+builder.Services.AddControllers();
+builder.Services.AddCors(o => o.AddPolicy("CorsRule", p =>
+    p.AllowAnyHeader()
+     .AllowAnyMethod()
+     .WithOrigins("http://localhost:5173")
+     .AllowCredentials()));
 builder.Services.AddAutoMapper(typeof(MappingProfiles));
-
-// Inyección de dependencias
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped(typeof(IGenericSeguridadRepository<>), typeof(GenericSeguridadRepository<>));
 builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
+builder.Services.AddScoped<ICarritoCompraRepository, CarritoCompraRepository>();
+
+// 6) (Opcional) Registrar explícitamente TimeProvider
+builder.Services.AddSingleton(TimeProvider.System);
 
 var app = builder.Build();
 
-// Migraciones y seeding inicial
+// 7) Migraciones + Seeding
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
-    var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+    var logFactory = services.GetRequiredService<ILoggerFactory>();
 
     try
     {
-        // Ejecutar migraciones para MarketDbContext
-        var marketContext = services.GetRequiredService<MarketDbContext>();
-        await marketContext.Database.MigrateAsync();
-        await MarketDbContextData.CargarDataAsync(marketContext, loggerFactory);
+        // Market
+        var marketCtx = services.GetRequiredService<MarketDbContext>();
+        await marketCtx.Database.MigrateAsync();
+        await MarketDbContextData.CargarDataAsync(marketCtx, logFactory);
 
-        // Ejecutar migraciones para SeguridadDbContext
-        var seguridadContext = services.GetRequiredService<SeguridadDbContext>();
-        await seguridadContext.Database.MigrateAsync();
+        // Seguridad
+        var segCtx = services.GetRequiredService<SeguridadDbContext>();
+        await segCtx.Database.MigrateAsync();
 
-        // Seed de usuarios
-        var userManager = services.GetRequiredService<UserManager<Usuario>>();
-        await SeguridadDbContextData.SeedUserAsync(userManager);
+        // Seed Roles
+        var roleMgr = services.GetRequiredService<RoleManager<IdentityRole>>();
+        var roles = new[] { "Admin", "Cliente" };
+        foreach (var roleName in roles)
+        {
+            if (!await roleMgr.RoleExistsAsync(roleName))
+                await roleMgr.CreateAsync(new IdentityRole(roleName));
+        }
+
+        // Seed Usuario Admin
+        var userMgr = services.GetRequiredService<UserManager<Usuario>>();
+        var adminEmail = "admin@correo.com";
+        if (await userMgr.FindByEmailAsync(adminEmail) == null)
+        {
+            var admin = new Usuario
+            {
+                UserName = adminEmail,
+                Email = adminEmail,
+                EmailConfirmed = true
+            };
+            var res = await userMgr.CreateAsync(admin, "Admin123*");
+            if (res.Succeeded)
+                await userMgr.AddToRoleAsync(admin, "Admin");
+        }
     }
     catch (Exception ex)
     {
-        var logger = loggerFactory.CreateLogger<Program>();
-        logger.LogError(ex, "Error durante la migración o seeding de datos");
+        var logger = logFactory.CreateLogger("Program");
+        logger.LogError(ex, "Error durante migraciones o seeding");
     }
 }
 
-// Configuración del pipeline HTTP
+// 8) Pipeline
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");
-
 app.UseRouting();
 app.UseCors("CorsRule");
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
 app.Run();

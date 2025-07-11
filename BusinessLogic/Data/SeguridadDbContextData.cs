@@ -10,7 +10,7 @@ namespace BusinessLogic.Data
 {
     public class SeguridadDbContextData
     {
-        public static async Task SeedUserAsync(UserManager<Usuario> userManager)
+        public static async Task SeedUserAsync(UserManager<Usuario> userManager, RoleManager<IdentityRole>roleManager)
         {
             if (!userManager.Users.Any())
             {
@@ -30,6 +30,15 @@ namespace BusinessLogic.Data
                     }
                 };
                 await userManager.CreateAsync(usuario, "Dolores@27");
+            }
+
+            if (!roleManager.Roles.Any())
+            {
+                var role = new IdentityRole
+                {
+                    Name = "Admin"
+                };
+                await roleManager.CreateAsync(role);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -23,13 +24,19 @@ namespace WebApi.Controllers
         private readonly SignInManager<Usuario> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+        private readonly IPasswordHasher<Usuario> _passwordHasher;
+        private readonly IGenericSeguridadRepository<Usuario> _seguridadRepository;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public UsuarioController(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, ITokenService tokenService, IMapper mapper)
+        public UsuarioController(UserManager<Usuario> userManager, SignInManager<Usuario> signInManager, ITokenService tokenService, IMapper mapper, IPasswordHasher<Usuario> passwordHasher, IGenericSeguridadRepository<Usuario> seguridadRepository, RoleManager<IdentityRole> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _tokenService = tokenService;
             _mapper = mapper;
+            _passwordHasher = passwordHasher;
+            _seguridadRepository = seguridadRepository;
+            _roleManager = roleManager;
         }
 
         [HttpPost("login")]
@@ -49,14 +56,17 @@ namespace WebApi.Controllers
             {
                 return Unauthorized(new CodeErrorResponse(401));
             }
-
+            var roles = await _userManager.GetRolesAsync(usuario);
             return new UsuarioDto
             {
+                Id = usuario.Id,
                 Email = usuario.Email,
                 Username = usuario.UserName,
-                Token = _tokenService.CreateToken(usuario),
+                Token = _tokenService.CreateToken(usuario,roles),
                 Nombre = usuario.Nombre,
-                Apellido = usuario.Apellido
+                Apellido = usuario.Apellido,
+                Imagen = usuario.Imagen,
+                Admin = roles.Contains("Admin") ? true : false
             };
 
         }
@@ -65,13 +75,13 @@ namespace WebApi.Controllers
         [HttpPost("registrar")]
         public async Task<ActionResult<UsuarioDto>> Registrar(RegistrarDto registrarDto)
         {
-
             var usuario = new Usuario
             {
                 Email = registrarDto.Email,
                 UserName = registrarDto.Username,
                 Nombre = registrarDto.Nombre,
-                Apellido = registrarDto.Apellido
+                Apellido = registrarDto.Apellido,
+                Imagen = "" // ESTA LÍNEA es la que evita el error
             };
 
             var resultado = await _userManager.CreateAsync(usuario, registrarDto.Password);
@@ -83,13 +93,145 @@ namespace WebApi.Controllers
 
             return new UsuarioDto
             {
+                Id = usuario.Id,
                 Nombre = usuario.Nombre,
                 Apellido = usuario.Apellido,
-                Token = _tokenService.CreateToken(usuario),
+                Imagen = usuario.Imagen,
+                Token = _tokenService.CreateToken(usuario, null),
                 Email = usuario.Email,
-                Username = usuario.UserName
+                Username = usuario.UserName,
+                Admin = false
             };
+        }
 
+
+        [Authorize]
+        [HttpPut("actualizar/{id}")] 
+        public async Task<ActionResult<UsuarioDto>> Actualizar (string id, RegistrarDto registrarDto)
+        {
+            var usuario =  await _userManager.FindByIdAsync(id);
+            if (usuario == null) return NotFound(new CodeErrorResponse(404, "El usuario no existe"));
+            
+            usuario.Email = registrarDto.Email;
+            if (!string.IsNullOrEmpty(registrarDto.Password))
+            {
+                usuario.PasswordHash = _passwordHasher.HashPassword(usuario, registrarDto.Password);
+            }
+           
+            usuario.UserName = registrarDto.Username;
+            usuario.Nombre = registrarDto.Nombre;
+            usuario.Apellido = registrarDto.Apellido;
+            usuario.Imagen = registrarDto.Imagen;
+            var resultado = await _userManager.UpdateAsync(usuario);
+            if (!resultado.Succeeded) return BadRequest(new CodeErrorResponse(400, "No se pudo actualizar el usuario"));
+            var roles = await _userManager.GetRolesAsync(usuario);
+            return new UsuarioDto
+            {
+                Id = usuario.Id,
+                Nombre = usuario.Nombre,
+                Apellido = usuario.Apellido,
+                Token = _tokenService.CreateToken(usuario, roles),
+                Email = usuario.Email,
+                Username = usuario.UserName,
+                Imagen = usuario.Imagen,
+                Admin = roles.Contains("Admin") ? true : false
+            };
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpGet("paginacion")]
+        public async Task <ActionResult<Pagination<UsuarioDto>>> GetUsuarios([FromQuery] UsuarioSpecificationParams usuarioParams)
+        {
+            var spec = new UsuarioSpecification(usuarioParams);
+            var usuarios = await _seguridadRepository.GetAllWithSpec(spec);
+            var specCount =  new UsuarioForCountingSpecification(usuarioParams);
+            var totalUsuarios = await _seguridadRepository.CountAsync(specCount);
+            var rounded = Math.Ceiling((double)totalUsuarios / usuarioParams.PageSize);
+
+            var data = _mapper.Map<IReadOnlyList<Usuario>, IReadOnlyList<UsuarioDto>>(usuarios);
+
+            return Ok(new Pagination<UsuarioDto>
+            {
+                Count = totalUsuarios,
+                PageIndex = usuarioParams.PageIndex,
+                PageSize = usuarioParams.PageSize,
+                PageCount = (int)rounded,
+                Data = data
+            });
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpPut("role/{id}")]
+        public async Task<ActionResult<RoleDto>> UpdateRole(string id, RoleDto roleParam)
+        {
+            var role = await _roleManager.FindByNameAsync(roleParam.Nombre);
+            if (role == null) return NotFound(new CodeErrorResponse(404, "El rol no existe"));
+
+            var usuario = await _userManager.FindByIdAsync(id);
+            if (usuario == null) return NotFound(new CodeErrorResponse(404, "El usuario no existe"));
+
+            var usuarioDto = _mapper.Map<Usuario, UsuarioDto>(usuario);
+
+            if (roleParam.Status)
+            {
+                var resultado = await _userManager.AddToRoleAsync(usuario, roleParam.Nombre);
+                if (resultado.Succeeded)
+                {
+                    usuarioDto.Admin = true;
+                    
+                }
+                if (resultado.Errors.Any())
+                {
+                   if (resultado.Errors.Where(x=> x.Code == "UserAlreadyInRole").Any())
+                    {
+                        usuarioDto.Admin = true;
+                    }
+                }
+            } else
+            {
+                var resultado = await _userManager.RemoveFromRoleAsync(usuario, roleParam.Nombre);
+                if (resultado.Succeeded)
+                {
+                    usuarioDto.Admin = false;
+                }
+                if (resultado.Errors.Any())
+                {
+                    if (resultado.Errors.Where(x => x.Code == "UserNotInRole").Any())
+                    {
+                        usuarioDto.Admin = false;
+                    }
+                }
+            }
+            
+
+            if (usuarioDto.Admin)
+            {
+                var roles = new List<string>();
+                roles.Add("Admin");
+                usuarioDto.Token = _tokenService.CreateToken(usuario, roles);
+            }else
+            {
+                usuarioDto.Token = _tokenService.CreateToken(usuario, null);
+            }
+                return Ok(usuarioDto);
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpGet("account/{id}")]
+        public async Task<ActionResult<UsuarioDto>> GetUsuarioById(string id)
+        {
+            var usuario = await _userManager.FindByIdAsync(id);
+            if (usuario == null) return NotFound(new CodeErrorResponse(404, "El usuario no existe"));
+            var roles = await _userManager.GetRolesAsync(usuario);
+            return new UsuarioDto
+            {
+                Id = usuario.Id,
+                Nombre = usuario.Nombre,
+                Apellido = usuario.Apellido,
+                Email = usuario.Email,
+                Username = usuario.UserName,
+                Token = _tokenService.CreateToken(usuario, roles),
+                Imagen = usuario.Imagen,
+                Admin = roles.Contains("Admin") ? true : false
+            };
         }
 
         [Authorize]
@@ -102,17 +244,19 @@ namespace WebApi.Controllers
             //var usuario = await _userManager.FindByEmailAsync(email);
 
             var usuario = await _userManager.BuscarUsuarioAsync(HttpContext.User);
-
+            var roles =  await _userManager.GetRolesAsync(usuario);
             return new UsuarioDto
             {
+                Id = usuario.Id,
                 Nombre = usuario.Nombre,
                 Apellido = usuario.Apellido,
                 Email = usuario.Email,
                 Username = usuario.UserName,
-                Token = _tokenService.CreateToken(usuario)
+                Token = _tokenService.CreateToken(usuario,roles),
+                Admin = roles.Contains("Admin") ? true : false,
             };
         }
-
+        [Authorize]
         [HttpGet("emailvalido")]
         public async Task<ActionResult<bool>> ValidarEmail([FromQuery] string email)
         {

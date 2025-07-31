@@ -11,7 +11,5 @@ namespace Core.Interfaces
     {
         string CreateToken(Usuario usuario, IList<string> roles);
 
-
-      
     }
 }

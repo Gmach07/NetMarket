@@ -21,6 +21,7 @@ namespace Core.Entities
 
         public Usuario? Usuario { get; set; }
 
+        public string Pais { get; set; }
 
     }
 }

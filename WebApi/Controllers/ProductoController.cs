@@ -21,7 +21,7 @@ namespace WebApi.Controllers
             _productoRepository = productoRepository;
             _mapper = mapper;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductoDto>>> GetProductos([FromQuery] ProductoSpecificationsParams productoParams)
         {
@@ -51,7 +51,7 @@ namespace WebApi.Controllers
 
             //return Ok(_mapper.Map<IReadOnlyList<Producto>, IReadOnlyList<ProductoDto>>(productos));
         }
-
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<ProductoDto>> GetProducto(int id)
         {
@@ -68,7 +68,7 @@ namespace WebApi.Controllers
             return _mapper.Map<Producto, ProductoDto>(producto);
 
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = "Bearer",Roles = "Admin")]
         [HttpPost]
         public async Task<ActionResult<Producto>> Post(Producto producto)
         {
@@ -79,7 +79,7 @@ namespace WebApi.Controllers
             }
             return Ok(resultado);
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut("{id}")]
 
         public async Task<ActionResult<Producto>> Put(int id, Producto producto)

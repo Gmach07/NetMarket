@@ -16,7 +16,7 @@ namespace Core.Specifications
                 (string.IsNullOrEmpty(usuarioParams.Apellido) || x.Apellido.ToLower().Contains(usuarioParams.Apellido.ToLower())))
         {
             AddOrderBy(x => x.UserName);
-            ApplyPaging((usuarioParams.PageIndex - 1) * usuarioParams.PageSize, usuarioParams.PageSize);
+            ApplyPaging(usuarioParams.PageIndex * usuarioParams.PageSize, usuarioParams.PageSize);
             if (!string.IsNullOrEmpty(usuarioParams.Sort))
             {
                 switch (usuarioParams.Sort)

@@ -38,7 +38,7 @@ namespace WebApi.Controllers
             _seguridadRepository = seguridadRepository;
             _roleManager = roleManager;
         }
-
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<ActionResult<UsuarioDto>> Login(LoginDto loginDto)
         {
@@ -71,7 +71,7 @@ namespace WebApi.Controllers
 
         }
 
-
+        [AllowAnonymous]
         [HttpPost("registrar")]
         public async Task<ActionResult<UsuarioDto>> Registrar(RegistrarDto registrarDto)
         {
@@ -105,39 +105,49 @@ namespace WebApi.Controllers
         }
 
 
-        [Authorize]
-        [HttpPut("actualizar/{id}")] 
-        public async Task<ActionResult<UsuarioDto>> Actualizar (string id, RegistrarDto registrarDto)
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [HttpPut("actualizar/{id}")]
+        public async Task<ActionResult<UsuarioDto>> Actualizar(string id, ActualizarDto registrarDto)
         {
-            var usuario =  await _userManager.FindByIdAsync(id);
-            if (usuario == null) return NotFound(new CodeErrorResponse(404, "El usuario no existe"));
-            
-            usuario.Email = registrarDto.Email;
+            var usuario = await _userManager.FindByIdAsync(id);
+            if (usuario == null)
+            {
+                return NotFound(new CodeErrorResponse(404, "El usuario no existe"));
+            }
+
+            usuario.Nombre = registrarDto.Nombre;
+            usuario.Apellido = registrarDto.Apellido;
+            usuario.Imagen = registrarDto.Imagen;
+
             if (!string.IsNullOrEmpty(registrarDto.Password))
             {
                 usuario.PasswordHash = _passwordHasher.HashPassword(usuario, registrarDto.Password);
             }
-           
-            usuario.UserName = registrarDto.Username;
-            usuario.Nombre = registrarDto.Nombre;
-            usuario.Apellido = registrarDto.Apellido;
-            usuario.Imagen = registrarDto.Imagen;
+
             var resultado = await _userManager.UpdateAsync(usuario);
-            if (!resultado.Succeeded) return BadRequest(new CodeErrorResponse(400, "No se pudo actualizar el usuario"));
+
+            if (!resultado.Succeeded)
+            {
+                return BadRequest(new CodeErrorResponse(400, "No se pudo actualizar el usuario"));
+            }
+
             var roles = await _userManager.GetRolesAsync(usuario);
+
             return new UsuarioDto
             {
                 Id = usuario.Id,
                 Nombre = usuario.Nombre,
                 Apellido = usuario.Apellido,
-                Token = _tokenService.CreateToken(usuario, roles),
                 Email = usuario.Email,
                 Username = usuario.UserName,
+                Token = _tokenService.CreateToken(usuario, roles),
                 Imagen = usuario.Imagen,
                 Admin = roles.Contains("Admin") ? true : false
+
             };
         }
-        [Authorize(Roles = "Admin")]
+
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpGet("paginacion")]
         public async Task <ActionResult<Pagination<UsuarioDto>>> GetUsuarios([FromQuery] UsuarioSpecificationParams usuarioParams)
         {
@@ -158,7 +168,7 @@ namespace WebApi.Controllers
                 Data = data
             });
         }
-        [Authorize(Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpPut("role/{id}")]
         public async Task<ActionResult<RoleDto>> UpdateRole(string id, RoleDto roleParam)
         {
@@ -214,7 +224,7 @@ namespace WebApi.Controllers
                 return Ok(usuarioDto);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = "Bearer", Roles = "Admin")]
         [HttpGet("account/{id}")]
         public async Task<ActionResult<UsuarioDto>> GetUsuarioById(string id)
         {
@@ -234,17 +244,16 @@ namespace WebApi.Controllers
             };
         }
 
-        [Authorize]
+        //[AllowAnonymous]
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet]
         public async Task<ActionResult<UsuarioDto>> GetUsuario()
         {
 
-            //var email = HttpContext.User?.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.Email)?.Value;
-
-            //var usuario = await _userManager.FindByEmailAsync(email);
-
             var usuario = await _userManager.BuscarUsuarioAsync(HttpContext.User);
-            var roles =  await _userManager.GetRolesAsync(usuario);
+
+            var roles = await _userManager.GetRolesAsync(usuario);
+
             return new UsuarioDto
             {
                 Id = usuario.Id,
@@ -252,10 +261,13 @@ namespace WebApi.Controllers
                 Apellido = usuario.Apellido,
                 Email = usuario.Email,
                 Username = usuario.UserName,
-                Token = _tokenService.CreateToken(usuario,roles),
-                Admin = roles.Contains("Admin") ? true : false,
+                Imagen = usuario.Imagen,
+                Token = _tokenService.CreateToken(usuario, roles),
+                Admin = roles.Contains("Admin") ? true : false
             };
         }
+        
+
         [Authorize]
         [HttpGet("emailvalido")]
         public async Task<ActionResult<bool>> ValidarEmail([FromQuery] string email)

@@ -1,4 +1,5 @@
 ﻿using Core.Entities;
+using Core.Entities.OrdenCompra;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,14 @@ namespace BusinessLogic.Data
         public DbSet<Categoria> Categoria { get; set; }
 
         public DbSet<Marca> Marca { get; set; }
+
+        public DbSet<OrdenCompras> OrdenCompras { get; set; }
+
+        public DbSet<OrdenItem> OrdenItem { get; set; }
+
+        public DbSet<TipoEnvio> TipoEnvio { get; set; }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

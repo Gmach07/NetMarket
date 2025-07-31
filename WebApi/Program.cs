@@ -1,3 +1,4 @@
+// NetMarket/Program.cs
 using BusinessLogic.Data;
 using BusinessLogic.Logic;
 using Core.Entities;
@@ -10,6 +11,8 @@ using StackExchange.Redis;
 using System.Text;
 using WebApi.Dtos;
 using WebApi.Middleware;
+using Microsoft.AspNetCore.Authorization; // Asegúrate de que este import esté presente
+using Microsoft.AspNetCore.Mvc.Authorization; // Asegúrate de que este import esté presente
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +31,6 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
 builder.Services
     .AddIdentity<Usuario, IdentityRole>(options =>
     {
-        // Password, bloqueo, etc.
         options.Password.RequireDigit = true;
         options.Password.RequireUppercase = false;
         options.Password.RequiredLength = 6;
@@ -62,11 +64,42 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 Encoding.UTF8.GetBytes(builder.Configuration["Token:Key"])),
             ValidIssuer = builder.Configuration["Token:Issuer"],
             ValidateIssuer = true,
-            ValidAudience = builder.Configuration["Token:Audience"], // <-- ¡AÑADIDO!
-            ValidateAudience = true, // <-- ¡CAMBIADO A TRUE!
-            ValidateLifetime = true // <-- ¡CONFIRMADO EN TRUE!
+            ValidateAudience = false
+        };
+
+        // AÑADIDO: Eventos para depuración del JWT Bearer
+        opt.Events = new JwtBearerEvents
+        {
+            OnMessageReceived = context =>
+            {
+                var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+                if (!string.IsNullOrEmpty(token))
+                {
+                    Console.WriteLine($"[DEBUG JWT Event] OnMessageReceived: Token encontrado en cabecera. Longitud: {token.Length}");
+                }
+                else
+                {
+                    Console.WriteLine("[DEBUG JWT Event] OnMessageReceived: No se encontró token en la cabecera Authorization.");
+                }
+                return Task.CompletedTask;
+            },
+            OnAuthenticationFailed = context =>
+            {
+                Console.WriteLine($"[DEBUG JWT Event] OnAuthenticationFailed: Error de autenticación: {context.Exception.Message}");
+                if (context.Exception.InnerException != null)
+                {
+                    Console.WriteLine($"[DEBUG JWT Event] Inner Exception: {context.Exception.InnerException.Message}");
+                }
+                return Task.CompletedTask;
+            },
+            OnTokenValidated = context =>
+            {
+                Console.WriteLine("[DEBUG JWT Event] OnTokenValidated: Token validado exitosamente. Usuario autenticado.");
+                return Task.CompletedTask;
+            }
         };
     });
+builder.Services.AddAuthorization();
 
 
 // 5) Otros servicios (CORS, AutoMapper, Repositorios…)
@@ -82,11 +115,18 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 builder.Services.AddScoped(typeof(IGenericSeguridadRepository<>), typeof(GenericSeguridadRepository<>));
 builder.Services.AddTransient<IProductoRepository, ProductoRepository>();
 builder.Services.AddScoped<ICarritoCompraRepository, CarritoCompraRepository>();
+builder.Services.AddScoped<IOrdenCompraService, OrdenCompraService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // 6) (Opcional) Registrar explícitamente TimeProvider
 builder.Services.AddSingleton(TimeProvider.System);
 
 var app = builder.Build();
+
+// AÑADE ESTAS LÍNEAS PARA DEPURACIÓN (ya las tienes)
+Console.WriteLine($"[DEBUG Program.cs] Key for validation: '{app.Configuration["Token:Key"]}'");
+Console.WriteLine($"[DEBUG Program.cs] Issuer for validation: '{app.Configuration["Token:Issuer"]}'");
+Console.WriteLine($"[DEBUG Program.cs] Audience for validation: '{app.Configuration["Token:Audience"]}'");
 
 // 7) Migraciones + Seeding
 using (var scope = app.Services.CreateScope())
@@ -123,7 +163,10 @@ using (var scope = app.Services.CreateScope())
             {
                 UserName = adminEmail,
                 Email = adminEmail,
-                EmailConfirmed = true
+                EmailConfirmed = true,
+                Nombre = "Admin",
+                Apellido = "User",
+                Imagen = ""
             };
             var res = await userMgr.CreateAsync(admin, "Admin123*");
             if (res.Succeeded)
@@ -140,9 +183,11 @@ using (var scope = app.Services.CreateScope())
 // 8) Pipeline
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseStatusCodePagesWithReExecute("/errors", "?code={0}");
+
+// ORDEN CRÍTICO:
 app.UseRouting();
 app.UseCors("CorsRule");
-app.UseAuthentication();
-app.UseAuthorization();
+app.UseAuthentication(); // <-- DESCOMENTADO
+app.UseAuthorization();  // <-- DESCOMENTADO
 app.MapControllers();
 app.Run();
